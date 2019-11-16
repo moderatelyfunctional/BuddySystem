@@ -10,6 +10,11 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    var heightConstraint:NSLayoutConstraint!
+    let wavyModal = WavyModal()
+    let loginText = BLabel(text: "welcome back,\nsusan")
+    let signupText = BLabel(text: "first time with\nus?")
+    
     let appTitle = BTitle()
     
     let loginButton = BButton(color: Constants.green, text: "Login")
@@ -29,14 +34,38 @@ class LoginViewController: UIViewController {
         
         self.view.backgroundColor = UIColor.white
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideWavy))
+        self.view.addGestureRecognizer(tapGestureRecognizer)
+        self.loginButton.addTarget(self, action: #selector(LoginViewController.showLogin), for: .touchUpInside)
+        self.signupButton.addTarget(self, action: #selector(LoginViewController.showSignup), for: .touchUpInside)
+
+        self.loginText.alpha = 0
+        self.signupText.alpha = 0
+        
         self.view.addSubview(self.appTitle)
         self.view.addSubview(self.loginButton)
         self.view.addSubview(self.signupButton)
         self.view.insertSubview(self.background, at: 0)
+
+        self.view.addSubview(self.loginText)
+        self.view.addSubview(self.signupText)
+        self.view.addSubview(self.wavyModal)
         addConstraints()
     }
     
     func addConstraints() {
+        self.view.addConstraint(BConstraint.paddingPositionConstraint(view: self.loginText, side: .left, padding: 40))
+        self.view.addConstraint(BConstraint.paddingPositionConstraint(view: self.loginText, side: .top, padding: 80))
+        self.view.addConstraint(BConstraint.paddingPositionConstraint(view: self.signupText, side: .left, padding: 40))
+        self.view.addConstraint(BConstraint.paddingPositionConstraint(view: self.signupText, side: .top, padding: 80))
+
+        self.heightConstraint = NSLayoutConstraint(item: self.wavyModal, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 0)
+//        self.heightConstraint = NSLayoutConstraint(item: self.wavyModal, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: 0)
+        
+        self.view.addConstraints(BConstraint.paddingPositionConstraints(view: self.wavyModal, sides: [.left, .right], padding: 0))
+        self.view.addConstraint(BConstraint.fillYConstraints(view: self.wavyModal, heightRatio: 0.7))
+        self.view.addConstraint(self.heightConstraint)
+        
         self.view.addConstraint(BConstraint.equalConstraint(firstView: self.appTitle, secondView: self.view, attribute: .centerX))
         self.view.addConstraint(NSLayoutConstraint(item: self.appTitle, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 0.7, constant: 0))
 
@@ -51,7 +80,40 @@ class LoginViewController: UIViewController {
         
         self.view.addConstraint(BConstraint.equalConstraint(firstView: self.signupButton, secondView: self.view, attribute: .centerX))
         self.view.addConstraint(BConstraint.verticalSpacingConstraint(upperView: self.loginButton, lowerView: self.signupButton, spacing: 40))
+    }
+    
+    @objc func showLogin() {
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
+            self.heightConstraint.constant = -UIScreen.main.bounds.height * 0.7
+            self.loginText.alpha = 1.0
+            self.appTitle.alpha = 0.0
+            self.loginButton.alpha = 0.0
+            self.signupButton.alpha = 0.0
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
 
+    @objc func showSignup() {
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
+            self.heightConstraint.constant = -UIScreen.main.bounds.height * 0.7
+            self.signupText.alpha = 1.0
+            self.appTitle.alpha = 0.0
+            self.loginButton.alpha = 0.0
+            self.signupButton.alpha = 0.0
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    @objc func hideWavy() {
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
+            self.heightConstraint.constant = 0
+            self.loginText.alpha = 0.0
+            self.signupText.alpha = 0.0
+            self.appTitle.alpha = 1.0
+            self.loginButton.alpha = 1.0
+            self.signupButton.alpha = 1.0
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
     
 }
