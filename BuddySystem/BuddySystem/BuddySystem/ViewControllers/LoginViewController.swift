@@ -12,8 +12,9 @@ class LoginViewController: UIViewController {
     
     var heightConstraint:NSLayoutConstraint!
     let wavyModal = WavyModal()
-    let loginText = BLabel(text: "welcome back,\nsusan")
-    let signupText = BLabel(text: "first time with\nus?")
+    let dismissWavy = DismissWavy()
+    let loginText = BLabel(text: "welcome back,\nsusan", font: .systemFont(ofSize: 48))
+    let signupText = BLabel(text: "first time with\nus?", font: .systemFont(ofSize: 48))
     
     let appTitle = BTitle()
     
@@ -34,15 +35,22 @@ class LoginViewController: UIViewController {
         
         self.view.backgroundColor = UIColor.white
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideWavy))
-        self.view.addGestureRecognizer(tapGestureRecognizer)
+        let hideGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideWavy))
+        self.dismissWavy.addGestureRecognizer(hideGestureRecognizer)
         self.loginButton.addTarget(self, action: #selector(LoginViewController.showLogin), for: .touchUpInside)
         self.signupButton.addTarget(self, action: #selector(LoginViewController.showSignup), for: .touchUpInside)
 
         self.loginText.alpha = 0
         self.signupText.alpha = 0
         
+        let endEditingRecognizer = UITapGestureRecognizer(target: self, action: #selector(endEditing))
+        self.wavyModal.addGestureRecognizer(endEditingRecognizer)
+        self.wavyModal.login.emailField.delegate = self
+        self.wavyModal.login.passwordField.delegate = self
+        self.wavyModal.submit.addTarget(self, action: #selector(LoginViewController.registerUser), for: .touchUpInside)
+        
         self.view.addSubview(self.appTitle)
+        self.view.addSubview(self.dismissWavy)
         self.view.addSubview(self.loginButton)
         self.view.addSubview(self.signupButton)
         self.view.insertSubview(self.background, at: 0)
@@ -54,13 +62,14 @@ class LoginViewController: UIViewController {
     }
     
     func addConstraints() {
+        self.view.addConstraints(BConstraint.paddingPositionConstraints(view: self.dismissWavy, sides: [.left, .top, .right, .bottom], padding: 0))
+        
         self.view.addConstraint(BConstraint.paddingPositionConstraint(view: self.loginText, side: .left, padding: 40))
         self.view.addConstraint(BConstraint.paddingPositionConstraint(view: self.loginText, side: .top, padding: 80))
         self.view.addConstraint(BConstraint.paddingPositionConstraint(view: self.signupText, side: .left, padding: 40))
         self.view.addConstraint(BConstraint.paddingPositionConstraint(view: self.signupText, side: .top, padding: 80))
 
-        self.heightConstraint = NSLayoutConstraint(item: self.wavyModal, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 0)
-//        self.heightConstraint = NSLayoutConstraint(item: self.wavyModal, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: 0)
+        self.heightConstraint = NSLayoutConstraint(item: self.wavyModal, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: 0)
         
         self.view.addConstraints(BConstraint.paddingPositionConstraints(view: self.wavyModal, sides: [.left, .right], padding: 0))
         self.view.addConstraint(BConstraint.fillYConstraints(view: self.wavyModal, heightRatio: 0.7))
@@ -114,6 +123,40 @@ class LoginViewController: UIViewController {
             self.signupButton.alpha = 1.0
             self.view.layoutIfNeeded()
         }, completion: nil)
+    }
+    
+    @objc func endEditing() {
+        self.wavyModal.login.emailField.endEditing(true)
+        self.wavyModal.login.passwordField.endEditing(true)
+        self.heightConstraint.constant = -UIScreen.main.bounds.height * 0.7
+    }
+    
+    @objc func registerUser() {
+        self.wavyModal.login.emailField.endEditing(true)
+        self.wavyModal.login.passwordField.endEditing(true)
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
+            self.heightConstraint.constant = 0
+            self.loginText.alpha = 0.0
+            self.signupText.alpha = 0.0
+            self.appTitle.alpha = 1.0
+            self.loginButton.alpha = 1.0
+            self.signupButton.alpha = 1.0
+            self.view.layoutIfNeeded()
+        }, completion: {
+            self.present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        }
+
+    }
+    
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
+                self.heightConstraint.constant = -UIScreen.main.bounds.height
+                self.view.layoutIfNeeded()
+            }, completion: nil)
     }
     
 }

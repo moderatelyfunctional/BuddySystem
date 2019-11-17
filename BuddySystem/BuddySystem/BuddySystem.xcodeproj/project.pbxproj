@@ -22,6 +22,9 @@
 		DC83FACE2380907C00E34DCA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC83FACD2380907C00E34DCA /* Preview Assets.xcassets */; };
 		DC83FAD12380907C00E34DCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC83FACF2380907C00E34DCA /* LaunchScreen.storyboard */; };
 		DC83FAD92380909200E34DCA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83FAD82380909200E34DCA /* LoginViewController.swift */; };
+		DCD2F6602380D1C800C2AE3E /* DismissWavy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2F65F2380D1C800C2AE3E /* DismissWavy.swift */; };
+		DCDCABAF2380B46700B68DDD /* WavyLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCABAE2380B46700B68DDD /* WavyLogin.swift */; };
+		DCDCABB12380B49F00B68DDD /* BTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCABB02380B49F00B68DDD /* BTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		DC83FAD02380907C00E34DCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC83FAD22380907C00E34DCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC83FAD82380909200E34DCA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DCD2F65F2380D1C800C2AE3E /* DismissWavy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissWavy.swift; sourceTree = "<group>"; };
+		DCDCABAE2380B46700B68DDD /* WavyLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavyLogin.swift; sourceTree = "<group>"; };
+		DCDCABB02380B49F00B68DDD /* BTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				DC2DD9E92380B08500D060DC /* BLabel.swift */,
+				DCDCABB02380B49F00B68DDD /* BTextField.swift */,
 				DC5DD2572380934A0094D4FF /* BButton.swift */,
 				DC2DD9DF2380954700D060DC /* BImageView.swift */,
 			);
@@ -91,6 +98,8 @@
 				DC5DD255238091AC0094D4FF /* BConstraint.swift */,
 				DC2DD9E523809F8A00D060DC /* BTitle.swift */,
 				DC2DD9E72380A49A00D060DC /* WavyModal.swift */,
+				DCD2F65F2380D1C800C2AE3E /* DismissWavy.swift */,
+				DCDCABAE2380B46700B68DDD /* WavyLogin.swift */,
 				DC5DD259238093520094D4FF /* Components */,
 				DC83FADA2380909600E34DCA /* ViewControllers */,
 				DC83FAC82380907C00E34DCA /* ContentView.swift */,
@@ -192,14 +201,17 @@
 				DC83FAD92380909200E34DCA /* LoginViewController.swift in Sources */,
 				DC5DD256238091AC0094D4FF /* BConstraint.swift in Sources */,
 				DC83FAC52380907C00E34DCA /* AppDelegate.swift in Sources */,
+				DCDCABAF2380B46700B68DDD /* WavyLogin.swift in Sources */,
 				DC2DD9E82380A49A00D060DC /* WavyModal.swift in Sources */,
 				DC2DD9E02380954700D060DC /* BImageView.swift in Sources */,
+				DCD2F6602380D1C800C2AE3E /* DismissWavy.swift in Sources */,
 				DC83FAC72380907C00E34DCA /* SceneDelegate.swift in Sources */,
 				DC2DD9DE2380945100D060DC /* Constants.swift in Sources */,
 				DC5DD2582380934A0094D4FF /* BButton.swift in Sources */,
 				DC2DD9E623809F8A00D060DC /* BTitle.swift in Sources */,
 				DC2DD9EA2380B08500D060DC /* BLabel.swift in Sources */,
 				DC83FAC92380907C00E34DCA /* ContentView.swift in Sources */,
+				DCDCABB12380B49F00B68DDD /* BTextField.swift in Sources */,
 				DC2DD9E42380989500D060DC /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

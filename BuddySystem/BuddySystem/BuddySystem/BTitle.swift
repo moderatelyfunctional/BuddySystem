@@ -19,6 +19,7 @@ class BTitle: UILabel {
             .font: UIFont.monospacedSystemFont(ofSize: 100, weight: .regular)
         ])
         let uddy = NSAttributedString(string: "uddy  ", attributes: [
+            .foregroundColor: UIColor.black,
             .font: UIFont.systemFont(ofSize: 40, weight: .regular)
         ])
         let five = NSAttributedString(string: "5", attributes: [
@@ -26,6 +27,7 @@ class BTitle: UILabel {
             .font: UIFont.monospacedSystemFont(ofSize: 100, weight: .regular)
         ])
         let ystem = NSAttributedString(string: "ystem", attributes: [
+            .foregroundColor: UIColor.black,
             .font: UIFont.systemFont(ofSize: 40, weight: .regular)
         ])
 

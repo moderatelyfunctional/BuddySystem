@@ -1,5 +1,5 @@
 //
-//  BLabel.swift
+//  dismissWavy.swift
 //  BuddySystem
 //
 //  Created by Jing Lin on 11/16/19.
@@ -8,15 +8,13 @@
 
 import UIKit
 
-class BLabel: UILabel {
+class DismissWavy: UIView {
     
-    init(text: String, font: UIFont) {
+    init() {
         super.init(frame: .zero)
-        self.translatesAutoresizingMaskIntoConstraints = false
         
-        self.text = text
-        self.font = font
-        self.numberOfLines = 0
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.backgroundColor = UIColor.clear
     }
     
     required init?(coder: NSCoder) {
