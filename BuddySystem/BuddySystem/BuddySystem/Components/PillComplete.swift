@@ -17,6 +17,12 @@ class PillComplete: UIView {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
         
+        self.isUserInteractionEnabled = true
+        self.circle.isUserInteractionEnabled = true
+        
+        let toggleCircle = UITapGestureRecognizer(target: self, action: #selector(PillComplete.changeCircle))
+        self.addGestureRecognizer(toggleCircle)
+        
         self.taken.textColor = UIColor.white
         
         self.addSubview(self.circle)
@@ -33,9 +39,12 @@ class PillComplete: UIView {
         self.addConstraint(BConstraint.horizontalSpacingConstraint(leftView: self.circle, rightView: self.taken, spacing: 5))
         self.addConstraint(BConstraint.paddingPositionConstraint(view: self.taken, side: .right, padding: 0))
         
-        
         self.addConstraint(BConstraint.verticalAlignConstraint(firstView: self.taken, secondView: self))
         self.addConstraint(BConstraint.verticalAlignConstraint(firstView: self.circle, secondView: self))
+    }
+    
+    @objc func changeCircle() {
+        self.circle.toggleColor()
     }
     
 }

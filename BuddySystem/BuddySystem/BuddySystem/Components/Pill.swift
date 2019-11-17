@@ -22,11 +22,12 @@ class Pill: UIView {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
         
+        self.isUserInteractionEnabled = true
         self.takenAfter.textColor = UIColor.white
         
         self.backgroundColor = Constants.green
         self.layer.cornerRadius = 20
-        
+                
         self.addSubview(self.pillInstructions)
         self.addSubview(self.takenAfter)
         self.addSubview(self.pillComplete)
@@ -45,9 +46,10 @@ class Pill: UIView {
         
         self.addConstraints(BConstraint.paddingPositionConstraints(view: self.takenAfter, sides: [.right, .top], padding: 20))
 
-        self.addConstraint(BConstraint.paddingPositionConstraint(view: self.pillComplete, side: .right, padding: 20))
-        self.addConstraint(BConstraint.paddingPositionConstraint(view: self.pillComplete, side: .bottom, padding: 30))
-
+        self.addConstraint(BConstraint.paddingPositionConstraint(view: self.pillComplete, side: .right, padding: 0))
+        self.addConstraint(BConstraint.paddingPositionConstraint(view: self.pillComplete, side: .bottom, padding: 0))
+        self.addConstraint(BConstraint.fillXConstraints(view: self.pillComplete, widthRatio: 0.36))
+        self.addConstraint(BConstraint.fillYConstraints(view: self.pillComplete, heightRatio: 0.4))
     }
     
 }

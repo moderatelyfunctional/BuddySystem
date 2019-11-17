@@ -10,6 +10,7 @@ import UIKit
 
 class CircleImageView: UIView {
     
+    var toggle = true
     let imageView:BImageView
     
     init(name: String) {
@@ -32,6 +33,11 @@ class CircleImageView: UIView {
         self.addConstraint(BConstraint.constantConstraint(view: self.imageView, attribute: .width, value: Constants.smileyCircle))
         self.addConstraint(BConstraint.constantConstraint(view: self.imageView, attribute: .height, value: Constants.smileyCircle))
         self.addConstraints(BConstraint.paddingPositionConstraints(view: self.imageView, sides: [.left, .top, .right, .bottom], padding: 5))
+    }
+    
+    func toggleColor() {
+        self.backgroundColor = self.toggle ? Constants.yellow : UIColor.white
+        self.toggle = !self.toggle
     }
     
 }
