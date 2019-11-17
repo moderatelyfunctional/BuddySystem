@@ -14,7 +14,7 @@ class HydrationViewController: UIViewController {
     let cups = Cups()
     
     let medicate = BLabel(text: "medication", font: .systemFont(ofSize: 40))
-    
+    let pill = Pill(pillText: "Aspirine", pillCount: 2, takenAfter: "take after\nbreakfast")
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -30,7 +30,7 @@ class HydrationViewController: UIViewController {
         self.view.addSubview(self.hydrate)
         self.view.addSubview(self.cups)
         self.view.addSubview(self.medicate)
-        
+        self.view.addSubview(self.pill)
         addConstraints()
     }
     
@@ -44,6 +44,11 @@ class HydrationViewController: UIViewController {
         
         self.view.addConstraint(BConstraint.verticalSpacingConstraint(upperView: self.cups, lowerView: self.medicate, spacing: 20))
         self.view.addConstraint(BConstraint.paddingPositionConstraint(view: self.medicate, side: .left, padding: 40))
+
+        self.view.addConstraint(BConstraint.verticalSpacingConstraint(upperView: self.medicate, lowerView: self.pill, spacing: 20))
+        self.view.addConstraint(BConstraint.fillYConstraints(view: self.pill, heightRatio: 0.13))
+        self.view.addConstraints(BConstraint.paddingPositionConstraints(view: self.pill, sides: [.left, .right], padding: 60))
+
     }
     
 }

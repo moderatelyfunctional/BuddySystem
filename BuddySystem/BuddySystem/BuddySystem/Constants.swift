@@ -15,4 +15,7 @@ struct Constants {
     static let orange:UIColor = UIColor(rgb: 0xE8602B)
     
     static let grey:UIColor = UIColor(rgb: 0xE5E5E5)
+    
+    static let pillCircle:CGFloat = 7
+    static let smileyCircle:CGFloat = 20
 }

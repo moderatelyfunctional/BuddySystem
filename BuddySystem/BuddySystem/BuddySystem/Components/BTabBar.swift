@@ -11,10 +11,10 @@ import UIKit
 class BTabBar: UIView {
     
     let imgs = [
-        BImageView(image: UIImage(named: "tab_pencil")),
-        BImageView(image: UIImage(named: "tab_alarm")),
-        BImageView(image: UIImage(named: "tab_walk")),
-        BImageView(image: UIImage(named: "tab_step")),
+        BImageView(image: UIImage(named: "tab_pencil")!.withRenderingMode(.alwaysTemplate)),
+        BImageView(image: UIImage(named: "tab_alarm")!.withRenderingMode(.alwaysTemplate)),
+        BImageView(image: UIImage(named: "tab_walk")!.withRenderingMode(.alwaysTemplate)),
+        BImageView(image: UIImage(named: "tab_step")!.withRenderingMode(.alwaysTemplate)),
     ]
     
     init() {
@@ -27,6 +27,7 @@ class BTabBar: UIView {
         self.layer.cornerRadius = 32
         
         for img in imgs {
+            img.tintColor = UIColor.white
             img.isUserInteractionEnabled = true
             img.contentMode = .scaleAspectFit
             self.addSubview(img)
@@ -45,7 +46,12 @@ class BTabBar: UIView {
             self.addConstraint(BConstraint.fillXConstraints(view: img, widthRatio: 0.1))
             self.addConstraint(BConstraint.verticalAlignConstraint(firstView: img, secondView: self))
         }
-        
+    }
+    
+    func selectIndex(index: Int) {
+        for (i, img) in self.imgs.enumerated() {
+            img.tintColor = i == index ? UIColor.darkText : UIColor.white
+        }
     }
     
 }

@@ -20,7 +20,7 @@ class Cups: UIView {
         self.cupsText.textColor = UIColor.white
                 
         self.backgroundColor = Constants.green
-        self.layer.cornerRadius = 40
+        self.layer.cornerRadius = 20
         
         self.addSubview(self.cupsText)
         self.addSubview(self.cupsCounter)

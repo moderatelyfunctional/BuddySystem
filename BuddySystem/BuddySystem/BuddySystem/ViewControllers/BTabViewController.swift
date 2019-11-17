@@ -52,8 +52,10 @@ class BTabViewController: UITabBarController {
     
     @objc func changeVC(sender: UITapGestureRecognizer) {
         let sender = sender.view as! BImageView
-        let index = self.tabImgs.firstIndex(of: sender)
-        print(index)
+        let index = self.tabImgs.firstIndex(of: sender)!
+
+        self.customTabBar.selectIndex(index: index)
+//        self.selectedIndex = index!
     }
     
 }

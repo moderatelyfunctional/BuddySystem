@@ -48,7 +48,7 @@ class WavyLogin: UIView {
         self.addConstraints(BConstraint.paddingPositionConstraints(view: self.emailField, sides: [.left, .right], padding: 40))
         self.addConstraint(BConstraint.constantConstraint(view: self.emailField, attribute: .height, value: UIScreen.main.bounds.height * 0.05))
         
-        self.addConstraint(BConstraint.verticalSpacingConstraint(upperView: self.emailField, lowerView: self.password, spacing: 40j))
+        self.addConstraint(BConstraint.verticalSpacingConstraint(upperView: self.emailField, lowerView: self.password, spacing: 40))
         self.addConstraints(BConstraint.paddingPositionConstraints(view: self.password, sides: [.left, .right], padding: 40))
         self.addConstraint(BConstraint.verticalSpacingConstraint(upperView: self.password, lowerView: self.passwordField, spacing: 20))
         self.addConstraints(BConstraint.paddingPositionConstraints(view: self.passwordField, sides: [.left, .right], padding: 40))
