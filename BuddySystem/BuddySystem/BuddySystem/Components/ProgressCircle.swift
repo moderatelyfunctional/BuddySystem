@@ -80,7 +80,7 @@ class ProgressCircle: UIView {
         self.percentage += 1
         self.progressCurve.removeFromSuperlayer()
         
-        self.text.text = String(format: "%.1f", min(percentage - 17.0, 83.0) / 83 * 100) + "%"
+        self.text.text = String(format: "%.1f", min(percentage - 17.0, 66) / 83 * 100) + "%"
         self.text.textColor = UIColor.black
         self.text.font = .systemFont(ofSize: 24.0)
         

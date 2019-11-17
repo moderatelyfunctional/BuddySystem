@@ -18,7 +18,7 @@ class BTabViewController: UITabBarController {
         super.init(nibName: nil, bundle: nil)
                 
         let hydrationVC = HydrationViewController()
-        let notificationVC = NotificationViewController()
+        let notificationVC = MatchViewController()
         let walkVC = WalkViewController()
         let stepVC = StepViewController()
         
@@ -28,7 +28,7 @@ class BTabViewController: UITabBarController {
         }
         
         self.viewControllers = [hydrationVC, notificationVC, walkVC, stepVC]
-        self.selectedIndex = 3
+        self.selectedIndex = 1
         self.customTabBar.selectIndex(index: 0)
 
         self.view.backgroundColor = Constants.grey

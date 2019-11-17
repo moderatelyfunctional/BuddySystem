@@ -14,7 +14,7 @@
 		DC2DD9E82380A49A00D060DC /* WavyModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2DD9E72380A49A00D060DC /* WavyModal.swift */; };
 		DC2DD9EA2380B08500D060DC /* BLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2DD9E92380B08500D060DC /* BLabel.swift */; };
 		DC39E21D2380D9320089377E /* WalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39E21C2380D9320089377E /* WalkViewController.swift */; };
-		DC39E21F2380E5C10089377E /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39E21E2380E5C10089377E /* NotificationsViewController.swift */; };
+		DC39E21F2380E5C10089377E /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39E21E2380E5C10089377E /* MatchViewController.swift */; };
 		DC39E2212380E5F10089377E /* StepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39E2202380E5F10089377E /* StepViewController.swift */; };
 		DC39E2232380E6090089377E /* BTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39E2222380E6090089377E /* BTabViewController.swift */; };
 		DC39E2252380EA630089377E /* BTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39E2242380EA630089377E /* BTabBar.swift */; };
@@ -25,6 +25,7 @@
 		DC469516238120D4005799AF /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC469515238120D4005799AF /* CircleImageView.swift */; };
 		DC46951823812D4E005799AF /* ProgressCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC46951723812D4E005799AF /* ProgressCircle.swift */; };
 		DC46951A23813ACE005799AF /* BView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC46951923813ACE005799AF /* BView.swift */; };
+		DC46951C2381636E005799AF /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC46951B2381636E005799AF /* CircleButton.swift */; };
 		DC5DD256238091AC0094D4FF /* BConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5DD255238091AC0094D4FF /* BConstraint.swift */; };
 		DC5DD2582380934A0094D4FF /* BButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5DD2572380934A0094D4FF /* BButton.swift */; };
 		DC83FAC52380907C00E34DCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83FAC42380907C00E34DCA /* AppDelegate.swift */; };
@@ -52,7 +53,7 @@
 		DC2DD9E72380A49A00D060DC /* WavyModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavyModal.swift; sourceTree = "<group>"; };
 		DC2DD9E92380B08500D060DC /* BLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLabel.swift; sourceTree = "<group>"; };
 		DC39E21C2380D9320089377E /* WalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkViewController.swift; sourceTree = "<group>"; };
-		DC39E21E2380E5C10089377E /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		DC39E21E2380E5C10089377E /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		DC39E2202380E5F10089377E /* StepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepViewController.swift; sourceTree = "<group>"; };
 		DC39E2222380E6090089377E /* BTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTabViewController.swift; sourceTree = "<group>"; };
 		DC39E2242380EA630089377E /* BTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTabBar.swift; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		DC469515238120D4005799AF /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		DC46951723812D4E005799AF /* ProgressCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircle.swift; sourceTree = "<group>"; };
 		DC46951923813ACE005799AF /* BView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BView.swift; sourceTree = "<group>"; };
+		DC46951B2381636E005799AF /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		DC5DD255238091AC0094D4FF /* BConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BConstraint.swift; sourceTree = "<group>"; };
 		DC5DD2572380934A0094D4FF /* BButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BButton.swift; path = BuddySystem/Components/BButton.swift; sourceTree = SOURCE_ROOT; };
 		DC83FAC12380907C00E34DCA /* BuddySystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuddySystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,7 @@
 		DC5DD259238093520094D4FF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DC46951B2381636E005799AF /* CircleButton.swift */,
 				DC46951723812D4E005799AF /* ProgressCircle.swift */,
 				DC46951923813ACE005799AF /* BView.swift */,
 				DC46951323812099005799AF /* PillComplete.swift */,
@@ -171,7 +174,7 @@
 				DC39E21C2380D9320089377E /* WalkViewController.swift */,
 				DC83FAD82380909200E34DCA /* LoginViewController.swift */,
 				DCD2F6612380D64200C2AE3E /* HydrationViewController.swift */,
-				DC39E21E2380E5C10089377E /* NotificationsViewController.swift */,
+				DC39E21E2380E5C10089377E /* MatchViewController.swift */,
 				DC39E2202380E5F10089377E /* StepViewController.swift */,
 				DC39E2222380E6090089377E /* BTabViewController.swift */,
 			);
@@ -255,6 +258,7 @@
 				DC46951A23813ACE005799AF /* BView.swift in Sources */,
 				DC46951423812099005799AF /* PillComplete.swift in Sources */,
 				DC5DD256238091AC0094D4FF /* BConstraint.swift in Sources */,
+				DC46951C2381636E005799AF /* CircleButton.swift in Sources */,
 				DC83FAC52380907C00E34DCA /* AppDelegate.swift in Sources */,
 				DCDCABAF2380B46700B68DDD /* WavyLogin.swift in Sources */,
 				DC39E21D2380D9320089377E /* WalkViewController.swift in Sources */,
@@ -266,7 +270,7 @@
 				DC46951223811C99005799AF /* PillInstructions.swift in Sources */,
 				DCD2F6602380D1C800C2AE3E /* DismissWavy.swift in Sources */,
 				DC83FAC72380907C00E34DCA /* SceneDelegate.swift in Sources */,
-				DC39E21F2380E5C10089377E /* NotificationsViewController.swift in Sources */,
+				DC39E21F2380E5C10089377E /* MatchViewController.swift in Sources */,
 				DC2DD9DE2380945100D060DC /* Constants.swift in Sources */,
 				DCD2F6622380D64200C2AE3E /* HydrationViewController.swift in Sources */,
 				DC5DD2582380934A0094D4FF /* BButton.swift in Sources */,

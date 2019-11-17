@@ -14,6 +14,8 @@ class BLabel: UILabel {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
         
+        self.textColor = UIColor.black
+        
         self.text = text
         self.font = font
         self.numberOfLines = 0
