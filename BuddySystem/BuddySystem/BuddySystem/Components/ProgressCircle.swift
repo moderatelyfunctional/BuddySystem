@@ -12,6 +12,11 @@ class ProgressCircle: UIView {
     
     var percentage:CGFloat = 17.0
     
+    let text = UILabel(frame: CGRect(
+        x: Constants.progressCircle * 0.65,
+        y: Constants.progressCircle * 0.65,
+        width: 80,
+        height: 60))
     let border = UIImageView(image: UIImage(named: "circle_border"))
     var progressCurve = CAShapeLayer()
     
@@ -34,6 +39,7 @@ class ProgressCircle: UIView {
         self.clipsToBounds = true
         
         self.addSubview(self.border)
+        self.addSubview(self.text)
     }
     
     required init?(coder: NSCoder) {
@@ -73,6 +79,10 @@ class ProgressCircle: UIView {
         print(self.percentage)
         self.percentage += 1
         self.progressCurve.removeFromSuperlayer()
+        
+        self.text.text = String(format: "%.1f", min(percentage - 17.0, 83.0) / 83 * 100) + "%"
+        self.text.textColor = UIColor.black
+        self.text.font = .systemFont(ofSize: 24.0)
         
         self.progressCurve = CAShapeLayer()
         self.progressCurve.path = createPath().cgPath
