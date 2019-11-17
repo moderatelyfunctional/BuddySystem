@@ -23,7 +23,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = LoginViewController()
+//            window.rootViewController = LoginViewController()
+            window.rootViewController = BTabViewController()
+//            window.rootViewController = WalkViewController()
             self.window = window
             window.makeKeyAndVisible()
         }

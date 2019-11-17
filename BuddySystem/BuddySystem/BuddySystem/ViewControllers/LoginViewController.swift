@@ -134,6 +134,7 @@ class LoginViewController: UIViewController {
     @objc func registerUser() {
         self.wavyModal.login.emailField.endEditing(true)
         self.wavyModal.login.passwordField.endEditing(true)
+        
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
             self.heightConstraint.constant = 0
             self.loginText.alpha = 0.0
@@ -142,10 +143,11 @@ class LoginViewController: UIViewController {
             self.loginButton.alpha = 1.0
             self.signupButton.alpha = 1.0
             self.view.layoutIfNeeded()
-        }, completion: {
-            self.present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        }) { (complete) in
+            let vc = HydrationViewController()
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
         }
-
     }
     
 }
