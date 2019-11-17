@@ -19,4 +19,5 @@ struct Constants {
     
     static let pillCircle:CGFloat = 7
     static let smileyCircle:CGFloat = 20
+    static let progressCircle:CGFloat = UIScreen.main.bounds.width * 0.75
 }

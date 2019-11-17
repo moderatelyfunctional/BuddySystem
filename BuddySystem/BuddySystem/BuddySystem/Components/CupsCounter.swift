@@ -22,7 +22,7 @@ class CupsCounter: UIView {
         
         self.layer.cornerRadius = 10
         self.backgroundColor = UIColor.white
-        
+                
         let incRecognizer = UITapGestureRecognizer(target: self, action: #selector(incCounter))
         let decRecognizer = UITapGestureRecognizer(target: self, action: #selector(decCounter))
         self.upImg.addGestureRecognizer(incRecognizer)
@@ -52,7 +52,10 @@ class CupsCounter: UIView {
         self.addConstraint(NSLayoutConstraint(item: self.downImg, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.25, constant: 0.0))
 
         self.addConstraint(BConstraint.fillXConstraints(view: self.upImg, widthRatio: 0.175))
-        self.addConstraint(BConstraint.fillXConstraints(view: self.downImg, widthRatio: 0.2))
+        self.addConstraint(BConstraint.fillYConstraints(view: self.upImg, heightRatio: 0.2))
+        self.addConstraint(BConstraint.fillXConstraints(view: self.downImg, widthRatio: 0.175))
+        self.addConstraint(BConstraint.fillYConstraints(view: self.downImg, heightRatio: 0.2))
+        
         self.addConstraint(BConstraint.paddingPositionConstraint(view: self.upImg, side: .right, padding: 10))
         self.addConstraint(BConstraint.paddingPositionConstraint(view: self.downImg, side: .right, padding: 10))
 

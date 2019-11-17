@@ -28,7 +28,9 @@ class BTabViewController: UITabBarController {
         }
         
         self.viewControllers = [hydrationVC, notificationVC, walkVC, stepVC]
-        self.selectedIndex = 0
+        self.selectedIndex = 3
+        self.customTabBar.selectIndex(index: 0)
+
         self.view.backgroundColor = Constants.grey
         
         self.tabBar.isHidden = true
@@ -55,7 +57,7 @@ class BTabViewController: UITabBarController {
         let index = self.tabImgs.firstIndex(of: sender)!
 
         self.customTabBar.selectIndex(index: index)
-//        self.selectedIndex = index!
+        self.selectedIndex = index
     }
     
 }

@@ -18,7 +18,7 @@ class Cups: UIView {
         self.translatesAutoresizingMaskIntoConstraints = false
         
         self.cupsText.textColor = UIColor.white
-                
+        
         self.backgroundColor = Constants.green
         self.layer.cornerRadius = 20
         

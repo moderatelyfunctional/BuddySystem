@@ -27,6 +27,11 @@ class WalkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        let stepGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(WalkViewController.transitionToStep))
+        self.walkButton.isUserInteractionEnabled = true
+        self.walkButton.addGestureRecognizer(stepGestureRecognizer)
+        
         self.view.backgroundColor = Constants.grey
         self.view.addSubview(self.appTitle)
         self.view.addSubview(self.desc)
@@ -44,6 +49,13 @@ class WalkViewController: UIViewController {
         self.view.addConstraint(BConstraint.fillXConstraints(view: self.walkButton, widthRatio: 0.75))
         self.view.addConstraints(BConstraint.centerAlignConstraints(firstView: self.walkButton, secondView: self.view))
 
+    }
+    
+    @objc func transitionToStep() {
+        let customBarController = self.tabBarController as! BTabViewController
+        let stepIndex = customBarController.tabImgs.count - 1
+        customBarController.customTabBar.selectIndex(index: stepIndex)
+        self.tabBarController!.selectedIndex = stepIndex
     }
     
 }
