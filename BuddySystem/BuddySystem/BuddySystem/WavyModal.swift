@@ -11,6 +11,7 @@ import UIKit
 class WavyModal: UIView {
     
     let login = WavyLogin()
+    let signup = WavySignup()
     let submit = BButton(color: Constants.green, text: "Submit")
     
     init() {
@@ -22,6 +23,7 @@ class WavyModal: UIView {
         self.layer.cornerRadius = 40
         self.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
+        self.addSubview(self.signup)
         self.addSubview(self.login)
         self.addSubview(self.submit)
         addConstraints()
@@ -32,6 +34,7 @@ class WavyModal: UIView {
     }
     
     func addConstraints() {
+        self.addConstraints(BConstraint.paddingPositionConstraints(view: self.signup, sides: [.left, .top, .right, .bottom], padding: 0))
         self.addConstraints(BConstraint.paddingPositionConstraints(view: self.login, sides: [.left, .top, .right, .bottom], padding: 0))
         
         self.addConstraint(BConstraint.equalConstraint(firstView: self.submit, secondView: self, attribute: .centerX))
@@ -40,8 +43,14 @@ class WavyModal: UIView {
         self.addConstraint(BConstraint.paddingPositionConstraint(view: self.submit, side: .bottom, padding: 80))
     }
     
+    func showSignup() {
+        self.signup.isHidden = false
+        self.login.isHidden = true
+    }
+    
     func showLogin() {
-        
+        self.signup.isHidden = true
+        self.login.isHidden = false
     }
     
 }

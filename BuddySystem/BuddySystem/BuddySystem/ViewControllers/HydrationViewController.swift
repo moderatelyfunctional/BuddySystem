@@ -9,10 +9,15 @@
 import UIKit
 
 class HydrationViewController: UIViewController {
+
+    let hydrate = BLabel(text: "hydration", font: .systemFont(ofSize: 40))
+    let cups = Cups()
+    
+    let medicate = BLabel(text: "medication", font: .systemFont(ofSize: 40))
+    
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        
     }
     
     required init?(coder: NSCoder) {
@@ -21,7 +26,24 @@ class HydrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.view.addSubview(self.hydrate)
+        self.view.addSubview(self.cups)
+        self.view.addSubview(self.medicate)
         
+        addConstraints()
+    }
+    
+    func addConstraints() {
+        self.view.addConstraint(BConstraint.paddingPositionConstraint(view: self.hydrate, side: .left, padding: 40))
+        self.view.addConstraint(BConstraint.paddingPositionConstraint(view: self.hydrate, side: .top, padding: 80))
+        
+        self.view.addConstraint(BConstraint.verticalSpacingConstraint(upperView: self.hydrate, lowerView: self.cups, spacing: 20))
+        self.view.addConstraints(BConstraint.paddingPositionConstraints(view: self.cups, sides: [.left, .right], padding: 60))
+        self.view.addConstraint(BConstraint.fillYConstraints(view: self.cups, heightRatio: 0.1))
+        
+        self.view.addConstraint(BConstraint.verticalSpacingConstraint(upperView: self.cups, lowerView: self.medicate, spacing: 20))
+        self.view.addConstraint(BConstraint.paddingPositionConstraint(view: self.medicate, side: .left, padding: 40))
     }
     
 }

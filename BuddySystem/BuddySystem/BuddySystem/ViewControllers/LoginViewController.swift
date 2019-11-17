@@ -45,8 +45,13 @@ class LoginViewController: UIViewController {
         
         let endEditingRecognizer = UITapGestureRecognizer(target: self, action: #selector(endEditing))
         self.wavyModal.addGestureRecognizer(endEditingRecognizer)
+        
         self.wavyModal.login.emailField.delegate = self
         self.wavyModal.login.passwordField.delegate = self
+        self.wavyModal.signup.nameField.delegate = self
+        self.wavyModal.signup.emailField.delegate = self
+        self.wavyModal.signup.passwordField.delegate = self
+        
         self.wavyModal.submit.addTarget(self, action: #selector(LoginViewController.registerUser), for: .touchUpInside)
         
         self.view.addSubview(self.appTitle)
@@ -92,6 +97,7 @@ class LoginViewController: UIViewController {
     }
     
     @objc func showLogin() {
+        self.wavyModal.showLogin()
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
             self.heightConstraint.constant = -UIScreen.main.bounds.height * 0.7
             self.loginText.alpha = 1.0
@@ -103,6 +109,7 @@ class LoginViewController: UIViewController {
     }
 
     @objc func showSignup() {
+        self.wavyModal.showSignup()
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
             self.heightConstraint.constant = -UIScreen.main.bounds.height * 0.7
             self.signupText.alpha = 1.0
@@ -128,6 +135,9 @@ class LoginViewController: UIViewController {
     @objc func endEditing() {
         self.wavyModal.login.emailField.endEditing(true)
         self.wavyModal.login.passwordField.endEditing(true)
+        self.wavyModal.signup.nameField.endEditing(true)
+        self.wavyModal.signup.emailField.endEditing(true)
+        self.wavyModal.signup.passwordField.endEditing(true)
         self.heightConstraint.constant = -UIScreen.main.bounds.height * 0.7
     }
     
@@ -144,7 +154,7 @@ class LoginViewController: UIViewController {
             self.signupButton.alpha = 1.0
             self.view.layoutIfNeeded()
         }) { (complete) in
-            let vc = HydrationViewController()
+            let vc = BTabViewController()
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
         }

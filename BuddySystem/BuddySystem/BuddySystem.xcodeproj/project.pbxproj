@@ -31,6 +31,9 @@
 		DCD2F6622380D64200C2AE3E /* HydrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2F6612380D64200C2AE3E /* HydrationViewController.swift */; };
 		DCDCABAF2380B46700B68DDD /* WavyLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCABAE2380B46700B68DDD /* WavyLogin.swift */; };
 		DCDCABB12380B49F00B68DDD /* BTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCABB02380B49F00B68DDD /* BTextField.swift */; };
+		DCF73D7E2380F234007920B4 /* Cups.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF73D7D2380F234007920B4 /* Cups.swift */; };
+		DCF73D822380FBD3007920B4 /* CupsCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF73D812380FBD3007920B4 /* CupsCounter.swift */; };
+		DCF73D8423810B18007920B4 /* WavySignup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF73D8323810B18007920B4 /* WavySignup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		DCD2F6612380D64200C2AE3E /* HydrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationViewController.swift; sourceTree = "<group>"; };
 		DCDCABAE2380B46700B68DDD /* WavyLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavyLogin.swift; sourceTree = "<group>"; };
 		DCDCABB02380B49F00B68DDD /* BTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTextField.swift; sourceTree = "<group>"; };
+		DCF73D7D2380F234007920B4 /* Cups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cups.swift; sourceTree = "<group>"; };
+		DCF73D812380FBD3007920B4 /* CupsCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupsCounter.swift; sourceTree = "<group>"; };
+		DCF73D8323810B18007920B4 /* WavySignup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavySignup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,9 @@
 		DC5DD259238093520094D4FF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DCF73D7D2380F234007920B4 /* Cups.swift */,
+				DCF73D8323810B18007920B4 /* WavySignup.swift */,
+				DCF73D812380FBD3007920B4 /* CupsCounter.swift */,
 				DC39E2242380EA630089377E /* BTabBar.swift */,
 				DC2DD9E92380B08500D060DC /* BLabel.swift */,
 				DCDCABB02380B49F00B68DDD /* BTextField.swift */,
@@ -216,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCF73D7E2380F234007920B4 /* Cups.swift in Sources */,
 				DC83FAD92380909200E34DCA /* LoginViewController.swift in Sources */,
 				DC39E2212380E5F10089377E /* StepViewController.swift in Sources */,
 				DC5DD256238091AC0094D4FF /* BConstraint.swift in Sources */,
@@ -231,7 +241,9 @@
 				DC2DD9DE2380945100D060DC /* Constants.swift in Sources */,
 				DCD2F6622380D64200C2AE3E /* HydrationViewController.swift in Sources */,
 				DC5DD2582380934A0094D4FF /* BButton.swift in Sources */,
+				DCF73D8423810B18007920B4 /* WavySignup.swift in Sources */,
 				DC2DD9E623809F8A00D060DC /* BTitle.swift in Sources */,
+				DCF73D822380FBD3007920B4 /* CupsCounter.swift in Sources */,
 				DC39E2232380E6090089377E /* BTabViewController.swift in Sources */,
 				DC2DD9EA2380B08500D060DC /* BLabel.swift in Sources */,
 				DC83FAC92380907C00E34DCA /* ContentView.swift in Sources */,

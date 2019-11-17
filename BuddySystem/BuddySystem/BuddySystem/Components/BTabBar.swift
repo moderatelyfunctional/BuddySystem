@@ -21,10 +21,13 @@ class BTabBar: UIView {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
         
+        self.isUserInteractionEnabled = true
+        
         self.backgroundColor = Constants.orange
         self.layer.cornerRadius = 32
         
         for img in imgs {
+            img.isUserInteractionEnabled = true
             img.contentMode = .scaleAspectFit
             self.addSubview(img)
         }
