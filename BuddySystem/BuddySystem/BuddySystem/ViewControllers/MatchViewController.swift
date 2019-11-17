@@ -15,8 +15,10 @@ class MatchViewController: UIViewController {
     let susan = BImageView(image: UIImage(named: "susan"))
     let amir = BImageView(image: UIImage(named: "amir"))
     
-    let susan_text = BLabel(text: "susan", font: .systemFont(ofSize: 20))
-    let amir_text = BLabel(text: "amir", font: .systemFont(ofSize: 20))
+    let susanText = BLabel(text: "susan", font: .systemFont(ofSize: 20))
+    let amirText = BLabel(text: "amir", font: .systemFont(ofSize: 20))
+    
+    let callButton = CircleButton(name: "phone")
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -33,8 +35,9 @@ class MatchViewController: UIViewController {
         self.view.addSubview(self.appTitle)
         self.view.addSubview(self.susan)
         self.view.addSubview(self.amir)
-        self.view.addSubview(self.susan_text)
-        self.view.addSubview(self.amir_text)
+        self.view.addSubview(self.susanText)
+        self.view.addSubview(self.amirText)
+        self.view.addSubview(self.callButton)
         addConstraints()
     }
     
@@ -50,13 +53,18 @@ class MatchViewController: UIViewController {
         self.view.addConstraint(BConstraint.fillXConstraints(view: self.amir, widthRatio: 0.3))
         self.view.addConstraint(BConstraint.fillXConstraints(view: self.susan, widthRatio: 0.3))
         
-        self.view.addConstraint(BConstraint.verticalSpacingConstraint(upperView: self.amir, lowerView: self.amir_text, spacing: 35))
-        self.view.addConstraint(BConstraint.verticalSpacingConstraint(upperView: self.susan, lowerView: self.susan_text, spacing: 35))
+        self.view.addConstraint(BConstraint.verticalSpacingConstraint(upperView: self.amir, lowerView: self.amirText, spacing: 35))
+        self.view.addConstraint(BConstraint.verticalSpacingConstraint(upperView: self.susan, lowerView: self.susanText, spacing: 35))
         
-        self.view.addConstraint(BConstraint.equalConstraint(firstView: self.susan, secondView: self.susan_text, attribute: .centerX))
-        self.view.addConstraint(BConstraint.equalConstraint(firstView: self.amir, secondView: self.amir_text, attribute: .centerX))
+        self.view.addConstraint(BConstraint.equalConstraint(firstView: self.susan, secondView: self.susanText, attribute: .centerX))
+        self.view.addConstraint(BConstraint.equalConstraint(firstView: self.amir, secondView: self.amirText, attribute: .centerX))
 
-
+        self.view.addConstraint(BConstraint.constantConstraint(view: self.callButton, attribute: .width, value: Constants.callCircle))
+        self.view.addConstraint(BConstraint.constantConstraint(view: self.callButton, attribute: .height, value: Constants.callCircle))
+        
+        self.view.addConstraint(BConstraint.verticalSpacingConstraint(upperView: self.amirText, lowerView: self.callButton, spacing: 120))
+        self.view.addConstraint(BConstraint.horizontalAlignConstraint(firstView: self.callButton, secondView: self.view))
+        
     }
     
 }
